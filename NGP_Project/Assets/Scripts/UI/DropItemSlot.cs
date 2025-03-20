@@ -10,9 +10,6 @@ public class DropItemSlot : MonoBehaviour, IDropHandler
 
     public void OnDrop(PointerEventData eventData)
     {
-        //Debug.Log($"OnDrop", this);
-        //Debug.Log($"Item_1", DragItemDummy.ItemBeingDragged);
-        //Debug.Log($"Item_2", _itemSlot);
         OnDrop_Action?.Invoke(DragItemDummy.ItemBeingDragged, _itemSlot);
     }
 }

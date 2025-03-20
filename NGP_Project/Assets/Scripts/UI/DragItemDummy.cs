@@ -1,12 +1,11 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class DragItemDummy : MonoBehaviour/*, IDragHandler*//*, IDropHandler*/
+public class DragItemDummy : MonoBehaviour
 {
     [SerializeField] Canvas _canvas = null;
     [SerializeField] RectTransform _rect = null;
     [SerializeField] ItemUISlot _myUiSlot = null;
-    //[SerializeField] DragItemSlot _item = null;
 
     public static ItemUISlot ItemBeingDragged = null;
 
@@ -20,7 +19,7 @@ public class DragItemDummy : MonoBehaviour/*, IDragHandler*//*, IDropHandler*/
         DragItemSlot.OnBeginDrag_Action += Begin;
         DragItemSlot.OnDrag_Action += Drag;
         DropItemSlot.OnDrop_Action += Disappear;
-        //DragItemSlot.OnEndDrag_UnityAction += EndDrag;
+        DropEmpty.OnDrop += Disappear;
     }
 
     private void OnDisable()
@@ -28,16 +27,14 @@ public class DragItemDummy : MonoBehaviour/*, IDragHandler*//*, IDropHandler*/
         DragItemSlot.OnBeginDrag_Action -= Begin;
         DragItemSlot.OnDrag_Action -= Drag;
         DropItemSlot.OnDrop_Action -= Disappear;
-        //DragItemSlot.OnEndDrag_UnityAction -= EndDrag;
+        DropEmpty.OnDrop -= Disappear;
     }
 
     private void Begin(ItemUISlot slot, Vector2 _initialPosition)
     {
-        //_item = arg0;
         ItemBeingDragged = slot;
         _rect.position = _initialPosition;
         _myUiSlot.Init(ItemBeingDragged.Item);
-        //_rect.anchoredPosition = arg0.GetComponent<RectTransform>().anchoredPosition;
     }
 
     private void Drag(DragItemSlot arg0, PointerEventData eventData)
@@ -54,19 +51,4 @@ public class DragItemDummy : MonoBehaviour/*, IDragHandler*//*, IDropHandler*/
     {
         _rect.position = Vector2.one * 123456f;
     }
-
-    //private void EndDrag(DragItemSlot arg0)
-    //{
-        
-    //}
-
-    //public void OnDrop(PointerEventData eventData)
-    //{
-    //    _rect.position = Vector2.one * 123456f;
-    //}
-
-    //public void OnDrag(PointerEventData eventData)
-    //{
-    //    _rect.anchoredPosition += eventData.delta / _canvas.scaleFactor;
-    //}
 }
