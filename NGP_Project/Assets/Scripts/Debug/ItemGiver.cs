@@ -6,6 +6,11 @@ public class ItemGiver : MonoBehaviour
     [SerializeField] ItemSO[] _itemSOs = null;
     [SerializeField] Vector2 _amountRange = Vector2.one;
 
+    //private void Start()
+    //{
+    //    AddItem();
+    //}
+
     [ContextMenu("AddItem()")]
     public void AddItem()
     {

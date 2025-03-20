@@ -10,14 +10,21 @@ public class InventoryUI : MonoBehaviour
     [Header("// Readonly")]
     [SerializeField] List<ItemUISlot> _slots = null;
 
+    private void Start()
+    {
+        UpdateVisuals();
+    }
+
     private void OnEnable()
     {
         _inventory.AddListener(UpdateVisuals);
+        DropItemSlot.OnDrop_Action += SwapItems;
     }
 
     private void OnDisable()
     {
         _inventory.RemoveListener(UpdateVisuals);
+        DropItemSlot.OnDrop_Action -= SwapItems;
     }
 
     public void UpdateVisuals()
@@ -45,5 +52,11 @@ public class InventoryUI : MonoBehaviour
         }
 
         _slots.Clear();
+    }
+
+    private void SwapItems(ItemUISlot arg0, ItemUISlot arg1)
+    {
+        // troca no inventario.
+        UpdateVisuals();
     }
 }
