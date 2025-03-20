@@ -1,43 +1,42 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class DragItemDummy : MonoBehaviour/*, IDragHandler*/, IDropHandler
+public class DragItemDummy : MonoBehaviour/*, IDragHandler*//*, IDropHandler*/
 {
     [SerializeField] Canvas _canvas = null;
     [SerializeField] RectTransform _rect = null;
-    [SerializeField] DragItemSlot _item = null;
+    [SerializeField] ItemUISlot _myUiSlot = null;
+    //[SerializeField] DragItemSlot _item = null;
 
     public static ItemUISlot ItemBeingDragged = null;
 
     private void Awake()
     {
-        _canvas = GetComponentInParent<Canvas>();
-    }
-
-    private void OnValidate()
-    {
-        _rect = GetComponent<RectTransform>();
+        Disappear();
     }
 
     private void OnEnable()
     {
-        DragItemSlot.OnBeginDrag_UnityAction += Begin;
-        DragItemSlot.OnDrag_UnityAction += Drag;
-        DragItemSlot.OnEndDrag_UnityAction += EndDrag;
+        DragItemSlot.OnBeginDrag_Action += Begin;
+        DragItemSlot.OnDrag_Action += Drag;
+        DropItemSlot.OnDrop_Action += Disappear;
+        //DragItemSlot.OnEndDrag_UnityAction += EndDrag;
     }
 
     private void OnDisable()
     {
-        DragItemSlot.OnBeginDrag_UnityAction -= Begin;
-        DragItemSlot.OnDrag_UnityAction -= Drag;
-        DragItemSlot.OnEndDrag_UnityAction -= EndDrag;
+        DragItemSlot.OnBeginDrag_Action -= Begin;
+        DragItemSlot.OnDrag_Action -= Drag;
+        DropItemSlot.OnDrop_Action -= Disappear;
+        //DragItemSlot.OnEndDrag_UnityAction -= EndDrag;
     }
 
-    private void Begin(ItemUISlot arg0, Vector2 _initialPosition)
+    private void Begin(ItemUISlot slot, Vector2 _initialPosition)
     {
         //_item = arg0;
-        ItemBeingDragged = arg0;
+        ItemBeingDragged = slot;
         _rect.position = _initialPosition;
+        _myUiSlot.Init(ItemBeingDragged.Item);
         //_rect.anchoredPosition = arg0.GetComponent<RectTransform>().anchoredPosition;
     }
 
@@ -46,15 +45,25 @@ public class DragItemDummy : MonoBehaviour/*, IDragHandler*/, IDropHandler
         _rect.anchoredPosition += eventData.delta / _canvas.scaleFactor;
     }
 
-    private void EndDrag(DragItemSlot arg0)
+    private void Disappear(ItemUISlot arg0, ItemUISlot arg1)
+    {
+        Disappear();
+    }
+
+    private void Disappear()
     {
         _rect.position = Vector2.one * 123456f;
     }
 
-    public void OnDrop(PointerEventData eventData)
-    {
-        _rect.position = Vector2.one * 123456f;
-    }
+    //private void EndDrag(DragItemSlot arg0)
+    //{
+        
+    //}
+
+    //public void OnDrop(PointerEventData eventData)
+    //{
+    //    _rect.position = Vector2.one * 123456f;
+    //}
 
     //public void OnDrag(PointerEventData eventData)
     //{

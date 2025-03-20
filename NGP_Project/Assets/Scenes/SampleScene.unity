@@ -1088,9 +1088,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9491875d74baf78409f47f0a83b03b07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canvas: {fileID: 0}
+  _canvas: {fileID: 267347284}
   _rect: {fileID: 7114245325085478388}
-  _item: {fileID: 0}
+  _myUiSlot: {fileID: 2795442939064770318}
 --- !u!1 &1390417978
 GameObject:
   m_ObjectHideFlags: 0
@@ -1414,6 +1414,7 @@ GameObject:
   - component: {fileID: 1763725857}
   - component: {fileID: 1763725858}
   - component: {fileID: 1763725859}
+  - component: {fileID: 1763725860}
   m_Layer: 5
   m_Name: Content
   m_TagString: Untagged
@@ -1478,6 +1479,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 0
   m_VerticalFit: 2
+--- !u!225 &1763725860
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1763725856}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1819116301
 GameObject:
   m_ObjectHideFlags: 0
@@ -2008,7 +2021,7 @@ GameObject:
   - component: {fileID: 3031667303476772363}
   - component: {fileID: 1319996435}
   m_Layer: 5
-  m_Name: Slot_ItemDrag
+  m_Name: Slot_DragDummy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
