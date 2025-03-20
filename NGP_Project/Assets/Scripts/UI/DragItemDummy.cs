@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class DragItemDummy : MonoBehaviour/*, IDragHandler*/
+public class DragItemDummy : MonoBehaviour/*, IDragHandler*/, IDropHandler
 {
     [SerializeField] Canvas _canvas = null;
     [SerializeField] RectTransform _rect = null;
@@ -47,6 +47,11 @@ public class DragItemDummy : MonoBehaviour/*, IDragHandler*/
     }
 
     private void EndDrag(DragItemSlot arg0)
+    {
+        _rect.position = Vector2.one * 123456f;
+    }
+
+    public void OnDrop(PointerEventData eventData)
     {
         _rect.position = Vector2.one * 123456f;
     }

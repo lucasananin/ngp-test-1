@@ -7,6 +7,8 @@ public class ItemUISlot : MonoBehaviour
 
     public event UnityAction<Item> OnValueChanged = null;
 
+    public Item Item { get => _item; }
+
     public void Init(Item _value)
     {
         _item = _value;

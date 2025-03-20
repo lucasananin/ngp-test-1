@@ -26,4 +26,9 @@ public class InventorySO : ScriptableObject
     {
         _inventory.OnChanged -= _action;
     }
+
+    public void SwapItems(Item _a, Item _b)
+    {
+        _inventory.SwapItems(_a, _b);
+    }
 }

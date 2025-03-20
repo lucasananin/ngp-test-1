@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -62,5 +63,19 @@ public class Inventory
         };
         _items.Add(_newItemInstance);
         return _newItemInstance;
+    }
+
+    public void SwapItems(Item _a, Item _b)
+    {
+        var _indexA = _items.IndexOf(_a);
+        var _indexB = _items.IndexOf(_b);
+
+        var _tempItem = _items[_indexA];
+        _items[_indexA] = _items[_indexB];
+        _items[_indexB] = _tempItem;
+
+        //var _temp = _a;
+        //_a = _b;
+        //_b = _temp;
     }
 }

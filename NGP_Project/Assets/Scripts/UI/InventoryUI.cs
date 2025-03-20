@@ -54,9 +54,9 @@ public class InventoryUI : MonoBehaviour
         _slots.Clear();
     }
 
-    private void SwapItems(ItemUISlot arg0, ItemUISlot arg1)
+    private void SwapItems(ItemUISlot _slot1, ItemUISlot _slot2)
     {
-        // troca no inventario.
+        _inventory.SwapItems(_slot1.Item, _slot2.Item);
         UpdateVisuals();
     }
 }
