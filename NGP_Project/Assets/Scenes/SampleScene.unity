@@ -381,6 +381,7 @@ GameObject:
   m_Component:
   - component: {fileID: 701462809}
   - component: {fileID: 701462808}
+  - component: {fileID: 701462810}
   m_Layer: 0
   m_Name: Tester
   m_TagString: Untagged
@@ -403,7 +404,7 @@ MonoBehaviour:
   _inventorySO: {fileID: 11400000, guid: 5a478cb9c0913d24081b328fd3aff0a5, type: 2}
   _itemSOs:
   - {fileID: 11400000, guid: 75ff40b8e73c88a4fa9bc59f42532ad9, type: 2}
-  - {fileID: 11400000, guid: 462248663d7ca2148baf13c3540cba1f, type: 2}
+  _quantity: 13
 --- !u!4 &701462809
 Transform:
   m_ObjectHideFlags: 0
@@ -419,6 +420,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &701462810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 701462807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f0aa5396ef504f49935c954d5b1545e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _items:
+  - Name: Axe
+    MaxQuantity: 1
+  _slots: []
+  _amount: 1
 --- !u!1 &1093277992
 GameObject:
   m_ObjectHideFlags: 0

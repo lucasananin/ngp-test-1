@@ -1,33 +1,34 @@
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.Progress;
 
 [System.Serializable]
 public class Inventory
 {
     [SerializeField] List<Item> _items = null;
 
-    public bool TryAdd(ItemSO _soValue, int _quantityValue)
+    public bool TryAdd(ItemSO _soValue, int _quantity)
     {
-        if (HasItem(_soValue, out Item _itemGrabbed))
+        while (_quantity > 0)
         {
-            _itemGrabbed.Quantity += _quantityValue;
-            // se passar da quantidade maxima, cria uma nova instancia.
-        }
-        else
-        {
-            var _newItemInstance = new Item()
+            if (FindAvailableItem(_soValue, out Item _itemGrabbed))
             {
-                SO = _soValue,
-                Quantity = _quantityValue,
-            };
-            _items.Add(_newItemInstance);
+                int _spaceAvailable = _itemGrabbed.SO.MaxAmount - _itemGrabbed.Amount;
+                int _amountToAdd = Mathf.Min(_spaceAvailable, _quantity);
+                _itemGrabbed.Amount += _amountToAdd;
+                _quantity -= _amountToAdd;
+            }
+            else
+            {
+                int _amountToAdd = Mathf.Min(_soValue.MaxAmount, _quantity);
+                CreateAndAddNewItemInstance(_soValue, _amountToAdd);
+                _quantity -= _amountToAdd;
+            }
         }
 
         return false;
     }
 
-    public bool HasItem(ItemSO _soValue/*, int _quantityValue*/, out Item _itemToReturn)
+    public bool FindAvailableItem(ItemSO _soValue, out Item _itemToReturn)
     {
         int _count = _items.Count;
 
@@ -35,7 +36,7 @@ public class Inventory
         {
             var _item = _items[i];
 
-            if (_item.SO.name == _soValue.name /*&& !_item.HasMaxQuantity()*/)
+            if (_item.SO.name == _soValue.name && _item.Amount < _soValue.MaxAmount)
             {
                 _itemToReturn = _item;
                 return true;
@@ -44,5 +45,16 @@ public class Inventory
 
         _itemToReturn = null;
         return false;
+    }
+
+    private Item CreateAndAddNewItemInstance(ItemSO _soValue, int _quantityValue)
+    {
+        var _newItemInstance = new Item()
+        {
+            SO = _soValue,
+            Amount = _quantityValue,
+        };
+        _items.Add(_newItemInstance);
+        return _newItemInstance;
     }
 }

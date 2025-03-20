@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _icon: {fileID: 0}
   _displayName: Axe
-  _maxQuantity: 10
+  _maxQuantity: 1
