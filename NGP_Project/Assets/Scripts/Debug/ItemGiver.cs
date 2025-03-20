@@ -4,14 +4,14 @@ public class ItemGiver : MonoBehaviour
 {
     [SerializeField] InventorySO _inventorySO = null;
     [SerializeField] ItemSO[] _itemSOs = null;
-    [SerializeField] int _quantity = 1;
+    [SerializeField] Vector2 _amountRange = Vector2.one;
 
     [ContextMenu("AddItem()")]
     public void AddItem()
     {
         var _randomIndex = Random.Range(0, _itemSOs.Length);
-        //var _randomQuantity = Random.Range(1, 10);
+        var _amount = (int)Random.Range(_amountRange.x, _amountRange.y);
         var _so = _itemSOs[_randomIndex];
-        _inventorySO.TryAdd(_so, _quantity);
+        _inventorySO.TryAdd(_so, _amount);
     }
 }

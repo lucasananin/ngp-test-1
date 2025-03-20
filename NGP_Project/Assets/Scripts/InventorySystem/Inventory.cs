@@ -1,10 +1,15 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [System.Serializable]
 public class Inventory
 {
     [SerializeField] List<Item> _items = null;
+
+    public event UnityAction OnChanged = null;
+
+    public List<Item> Items { get => _items; private set => _items = value; }
 
     public bool TryAdd(ItemSO _soValue, int _quantity)
     {
@@ -25,6 +30,7 @@ public class Inventory
             }
         }
 
+        OnChanged?.Invoke();
         return false;
     }
 
