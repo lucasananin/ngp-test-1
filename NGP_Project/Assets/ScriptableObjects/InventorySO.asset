@@ -13,10 +13,4 @@ MonoBehaviour:
   m_Name: InventorySO
   m_EditorClassIdentifier: 
   _inventory:
-    _items:
-    - _so: {fileID: 11400000, guid: 462248663d7ca2148baf13c3540cba1f, type: 2}
-      _quantity: 1
-    - _so: {fileID: 11400000, guid: 462248663d7ca2148baf13c3540cba1f, type: 2}
-      _quantity: 1
-    - _so: {fileID: 11400000, guid: 462248663d7ca2148baf13c3540cba1f, type: 2}
-      _quantity: 1
+    _items: []

@@ -10,4 +10,9 @@ public class ItemSO : ScriptableObject
     public Sprite Icon { get => _icon; set => _icon = value; }
     public string DisplayName { get => _displayName; set => _displayName = value; }
     public int MaxAmount { get => _maxAmount; set => _maxAmount = value; }
+
+    private void OnValidate()
+    {
+        _displayName = name;
+    }
 }
