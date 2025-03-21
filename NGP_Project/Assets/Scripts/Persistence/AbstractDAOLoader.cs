@@ -14,4 +14,5 @@ public abstract class AbstractDAOLoader : MonoBehaviour
 
     public abstract void Save();
     public abstract void Load();
+    public abstract string GenerateKey();
 }

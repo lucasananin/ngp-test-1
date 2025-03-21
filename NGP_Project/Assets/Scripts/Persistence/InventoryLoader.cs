@@ -13,7 +13,7 @@ public class InventoryLoader : AbstractDAOLoader
     [ContextMenu("Load()")]
     public override void Load()
     {
-        var _loadedInventory = PersistenceHandler.Load<ItemListDAO>(Inventory.INVENTORY_KEY);
+        var _loadedInventory = PersistenceHandler.Load<ItemListDAO>(GenerateKey());
 
         if (_loadedInventory == null || _loadedInventory.itemDAOs.Count <= 0)
         {
@@ -46,5 +46,10 @@ public class InventoryLoader : AbstractDAOLoader
     public void DeleteFiles()
     {
         PersistenceHandler.DeleteAllSaves();
+    }
+
+    public override string GenerateKey()
+    {
+        return Inventory.INVENTORY_KEY;
     }
 }

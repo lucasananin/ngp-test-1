@@ -10,10 +10,12 @@ public class FurnitureBehaviour : MonoBehaviour
     [Header("// Readonly")]
     [SerializeField] bool _isSet = false;
 
-    private void Start()
-    {
-        SetValue(_isSet);
-    }
+    public bool IsSet { get => _isSet; }
+
+    //private void Start()
+    //{
+    //    SetValue(_isSet);
+    //}
 
     private void OnTriggerEnter2D(Collider2D _other)
     {

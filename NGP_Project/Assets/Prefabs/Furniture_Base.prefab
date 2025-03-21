@@ -144,6 +144,7 @@ GameObject:
   - component: {fileID: 9152076278531061349}
   - component: {fileID: 1190671222091578328}
   - component: {fileID: 8017386175463921132}
+  - component: {fileID: -647730598941993526}
   m_Layer: 0
   m_Name: Furniture_Base
   m_TagString: Untagged
@@ -231,6 +232,20 @@ MonoBehaviour:
   _areaRenderer: {fileID: 5981593314167387197}
   _iconRenderer: {fileID: 7604777589624098489}
   _isSet: 0
+--- !u!114 &-647730598941993526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1082438319083826056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7692a189bd364ad4d8d9c678cd6203a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _key: gamepad_1
+  _behaviour: {fileID: 8017386175463921132}
 --- !u!1 &4694329483794069325
 GameObject:
   m_ObjectHideFlags: 0
