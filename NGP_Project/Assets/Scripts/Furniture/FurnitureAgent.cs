@@ -16,6 +16,8 @@ public class FurnitureAgent : ItemUseListener
     {
         base.OnUse(_inventory, _itemValue);
 
+        if (_itemSO == null) return;
+
         if (_itemValue.SO.name == _itemSO.name)
         {
             _furniture.SetValue(true);

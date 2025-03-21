@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InventoryUI : MonoBehaviour
+public class InventoryUI : CanvasView
 {
     [SerializeField] InventorySO _inventory = null;
     [SerializeField] ItemUISlot _prefab = null;
@@ -10,9 +10,27 @@ public class InventoryUI : MonoBehaviour
     [Header("// Readonly")]
     [SerializeField] List<ItemUISlot> _slots = null;
 
-    private void Start()
+    private void Awake()
     {
-        UpdateVisuals();
+        InstantHide();
+    }
+
+    protected override void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            if (IsVisible())
+            {
+                InstantHide();
+            }
+            else
+            {
+                InstantShow();
+                UpdateVisuals();
+            }
+        }
+
+        base.Update();
     }
 
     private void OnEnable()
@@ -29,6 +47,8 @@ public class InventoryUI : MonoBehaviour
 
     public void UpdateVisuals()
     {
+        if (!IsVisible()) return;
+
         ClearSlots();
 
         var _itemsList = _inventory.GetItemsList();
