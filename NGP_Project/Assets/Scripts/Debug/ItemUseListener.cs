@@ -13,17 +13,17 @@ public class ItemUseListener : MonoBehaviour
     private void OnDisable()
     {
         //_so.RemoveListener(PrintMessage);
-        _useSO.AddListener(OnUse);
-    }
-
-    private void PrintMessage(Inventory _inventory, Item _itemValue)
-    {
-        _itemValue.DecreaseAmount(_inventory);
-        Debug.Log($"// {_itemValue.SO.DisplayName} used!");
+        _useSO.RemoveListener(OnUse);
     }
 
     public virtual void OnUse(Inventory _inventory, Item _itemValue)
     {
         //
     }
+
+    //private void PrintMessage(Inventory _inventory, Item _itemValue)
+    //{
+    //    _itemValue.DecreaseAmount(_inventory);
+    //    Debug.Log($"// {_itemValue.SO.DisplayName} used!");
+    //}
 }

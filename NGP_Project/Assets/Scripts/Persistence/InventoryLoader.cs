@@ -13,9 +13,11 @@ public class InventoryLoader : AbstractDAOLoader
     [ContextMenu("Load()")]
     public override void Load()
     {
-        var _loadedInventory = PersistenceHandler.Load<ItemListDAO>(GenerateKey());
+        var _loadedDAO = PersistenceHandler.Load<ItemListDAO>(GenerateKey());
 
-        if (_loadedInventory == null || _loadedInventory.itemDAOs.Count <= 0)
+        _inventory.Clear();
+
+        if (_loadedDAO == null || _loadedDAO.itemDAOs.Count <= 0)
         {
             return;
         }
@@ -25,12 +27,11 @@ public class InventoryLoader : AbstractDAOLoader
         //    Debug.Log($"{item.so_id} - {item.amount}");
         //}
 
-        _inventory.Clear();
-        int _count = _loadedInventory.itemDAOs.Count;
+        int _count = _loadedDAO.itemDAOs.Count;
 
-        for (int i = 0; i < _loadedInventory.itemDAOs.Count; i++)
+        for (int i = 0; i < _count; i++)
         {
-            var _daoList = _loadedInventory.itemDAOs[i];
+            var _daoList = _loadedDAO.itemDAOs[i];
             var _so = _itemSoCollection.GetItemSO(_daoList.so_id);
             _inventory.TryAdd(_so, _daoList.amount);
         }

@@ -12,15 +12,15 @@ public class FurnitureLoader : AbstractDAOLoader
 
     public override void Load()
     {
-        var _loadedInventory = PersistenceHandler.Load<FurnitureDAO>(GenerateKey());
+        var _loadedDao = PersistenceHandler.Load<FurnitureDAO>(GenerateKey());
 
-        if (_loadedInventory == null)
+        if (_loadedDao == null)
         {
             _behaviour.SetValue(false);
         }
         else
         {
-            _behaviour.SetValue(_loadedInventory.isSet);
+            _behaviour.SetValue(_loadedDao.isSet);
         }
     }
 

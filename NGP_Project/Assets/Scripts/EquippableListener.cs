@@ -8,6 +8,8 @@ public class EquippableListener : ItemUseListener
     [SerializeField] Inventory _currentInventory = null;
     [SerializeField] Item _currentItem = null;
 
+    public Item CurrentItem { get => _currentItem; }
+
     public override void OnUse(Inventory _inventoryValue, Item _itemValue)
     {
         base.OnUse(_inventoryValue, _itemValue);
@@ -18,7 +20,18 @@ public class EquippableListener : ItemUseListener
         _currentInventory = _inventoryValue;
         _currentItem = _itemValue;
 
-        _renderer.sprite = _currentItem.SO.Icon;
-        FindFirstObjectByType<InventoryUI>().gameObject.SetActive(false);
+        UpdateVisuals();
+        FindFirstObjectByType<InventoryUI>().InstantHide();
+    }
+
+    public void UpdateVisuals()
+    {
+        _renderer.sprite = _currentItem == null ? null : _currentItem.SO.Icon;
+    }
+
+    public void SetItem(Item _value)
+    {
+        _currentItem = _value;
+        UpdateVisuals();
     }
 }

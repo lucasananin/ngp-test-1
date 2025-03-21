@@ -322,11 +322,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _prefab: {fileID: 6620874846026786380, guid: f9dce7d2584fd6541a2d734934bc6c24, type: 3}
   _area: {fileID: 550433280}
-  _spawnRate: 5
+  _spawnRate: 3
   _spawnList:
   - itemSO: {fileID: 11400000, guid: 75ff40b8e73c88a4fa9bc59f42532ad9, type: 2}
     amount: 3
   - itemSO: {fileID: 11400000, guid: 462248663d7ca2148baf13c3540cba1f, type: 2}
+    amount: 1
+  - itemSO: {fileID: 11400000, guid: abe503e92c52a0f45bb70f9e02372b5a, type: 2}
     amount: 1
   _currentIndex: 0
   _nextSpawn: 0
@@ -4739,6 +4741,7 @@ GameObject:
   - component: {fileID: 1978489896}
   - component: {fileID: 1978489897}
   - component: {fileID: 1978489898}
+  - component: {fileID: 1978489899}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -4886,6 +4889,21 @@ MonoBehaviour:
   _useSO: {fileID: 11400000, guid: 34740e745a9788b409486ae1c9fc4bbb, type: 2}
   _furniture: {fileID: 0}
   _itemSO: {fileID: 0}
+--- !u!114 &1978489899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1978489891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 168471af1e9a1ff459a612b13253f13c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _key: hat
+  _equip: {fileID: 1978489897}
+  _itemSoCollection: {fileID: 11400000, guid: e14593edb1475d446b862069fe0254d9, type: 2}
 --- !u!1 &2141438491
 GameObject:
   m_ObjectHideFlags: 0
