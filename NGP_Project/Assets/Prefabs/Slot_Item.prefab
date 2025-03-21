@@ -110,7 +110,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -20, y: -20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4450778569872078937
 CanvasRenderer:
@@ -167,7 +167,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 1
+  m_fontSize: 24
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -348,7 +348,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7960493613519275148
 RectTransform:
   m_ObjectHideFlags: 0
@@ -555,6 +555,7 @@ GameObject:
   - component: {fileID: 2795442937817322271}
   - component: {fileID: 3031667304372613658}
   - component: {fileID: -2333859706349871053}
+  - component: {fileID: 3516005258921969094}
   - component: {fileID: 7434305493699263561}
   - component: {fileID: 4913324733889314834}
   - component: {fileID: 8105696328333322453}
@@ -587,7 +588,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 180, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &536100118173537036
 MonoBehaviour:
@@ -621,6 +622,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f834f9ffa17ce81408eed60c79e22e19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _inventorySO: {fileID: 0}
   _item:
     _so: {fileID: 0}
     _amount: 0
@@ -652,6 +654,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _slot: {fileID: 2795442937817322271}
   _button: {fileID: 2543204895651359313}
+--- !u!114 &3516005258921969094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7957911976028546105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfd11812e78fb3445ba6452bc698871b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _slot: {fileID: 2795442937817322271}
+  _text: {fileID: 451967892078471}
 --- !u!114 &7434305493699263561
 MonoBehaviour:
   m_ObjectHideFlags: 0
