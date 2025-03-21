@@ -25,7 +25,7 @@ public class EquipmentLoader : AbstractDAOLoader
         {
             var _newItem = new Item()
             {
-                SO = _itemSoCollection.GetItemSO(_loadedDao.so_id),
+                SO = _itemSoCollection.GetByName(_loadedDao.so_id),
                 Amount = 1,
             };
             _equip.SetItem(_newItem);

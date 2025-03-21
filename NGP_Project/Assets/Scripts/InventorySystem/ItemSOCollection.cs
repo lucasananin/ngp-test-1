@@ -6,7 +6,7 @@ public class ItemSOCollection : ScriptableObject
 {
     [SerializeField] List<ItemSO> _list = null;
 
-    public ItemSO GetItemSO(string _name)
+    public ItemSO GetByName(string _name)
     {
         int _count = _list.Count;
 

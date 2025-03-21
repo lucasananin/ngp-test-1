@@ -32,7 +32,7 @@ public class InventoryLoader : AbstractDAOLoader
         for (int i = 0; i < _count; i++)
         {
             var _daoList = _loadedDAO.itemDAOs[i];
-            var _so = _itemSoCollection.GetItemSO(_daoList.so_id);
+            var _so = _itemSoCollection.GetByName(_daoList.so_id);
             _inventory.TryAdd(_so, _daoList.amount);
         }
     }

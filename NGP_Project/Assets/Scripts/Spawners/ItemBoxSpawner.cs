@@ -12,6 +12,10 @@ public class ItemBoxSpawner : MonoBehaviour
     [Header("Readonly")]
     [SerializeField] int _currentIndex = 0;
     [SerializeField] float _nextSpawn = 0f;
+    [SerializeField] List<CollectableItem> _spawnedBoxes = null;
+
+    public List<CollectableItem> SpawnedBoxes { get => _spawnedBoxes; }
+    public int CurrentIndex { get => _currentIndex; }
 
     //public static event UnityAction OnSpawned = null;
 
@@ -31,9 +35,15 @@ public class ItemBoxSpawner : MonoBehaviour
 
     public void Spawn()
     {
-        var _instance = Instantiate(_prefab, RandomPointInBounds(_area.bounds), Quaternion.identity);
         var _data = _spawnList[_currentIndex];
-        _instance.Init(_data.itemSO, _data.amount);
+        Spawn(_data.itemSO, _data.amount);
+    }
+
+    public void Spawn(ItemSO _so, int _amount)
+    {
+        var _instance = Instantiate(_prefab, RandomPointInBounds(_area.bounds), Quaternion.identity);
+        _instance.Init(_so, _amount, RemoveFromList);
+        _spawnedBoxes.Add(_instance);
     }
 
     public static Vector3 RandomPointInBounds(Bounds _bounds)
@@ -43,6 +53,16 @@ public class ItemBoxSpawner : MonoBehaviour
             Random.Range(_bounds.min.y, _bounds.max.y),
             Random.Range(_bounds.min.z, _bounds.max.z)
         );
+    }
+
+    private void RemoveFromList(CollectableItem _box)
+    {
+        _spawnedBoxes.Remove(_box);
+    }
+
+    public void SetIndex(int _value)
+    {
+        _currentIndex = _value;
     }
 }
 
