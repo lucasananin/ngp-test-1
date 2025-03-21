@@ -1,6 +1,4 @@
-using System;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -36,6 +34,12 @@ public class Inventory
 
         OnChanged?.Invoke();
         return false;
+    }
+
+    public void Add(Item _item)
+    {
+        _items.Add(_item);
+        OnChanged?.Invoke();
     }
 
     public bool FindAvailableItem(ItemSO _soValue, out Item _itemToReturn)
