@@ -23,7 +23,7 @@ public class AudioHandler : MonoBehaviour
 
     private void PlayAudio(AudioSO _soValue)
     {
-        var _source = GetAvailableSource();
+        var _source = _soValue.IsMusic ? _sources[0] : GetAvailableSource();
         _source.clip = _soValue.Clip;
         _source.loop = _soValue.IsMusic;
         _source.Play();
@@ -33,7 +33,7 @@ public class AudioHandler : MonoBehaviour
     {
         int _count = _sources.Count;
 
-        for (int i = 0; i < _count; i++)
+        for (int i = 1; i < _count; i++)
         {
             if (!_sources[i].isPlaying)
             {
