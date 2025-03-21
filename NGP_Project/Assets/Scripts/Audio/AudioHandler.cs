@@ -13,31 +13,13 @@ public class AudioHandler : MonoBehaviour
 
     private void OnEnable()
     {
-        AudioSO.OnPlayMusic += PlayAudio;
-        AudioSO.OnPlaySfx += PlayAudio;
+        AudioSO.OnPlay += PlayAudio;
     }
 
     private void OnDisable()
     {
-        AudioSO.OnPlayMusic -= PlayAudio;
-        AudioSO.OnPlaySfx -= PlayAudio;
+        AudioSO.OnPlay -= PlayAudio;
     }
-
-    //private void PlayMusic(AudioSO _soValue)
-    //{
-    //    var _source = GetAvailableSource();
-    //    _source.clip = _soValue.Clip;
-    //    _source.loop = true;
-    //    _source.Play();
-    //}
-
-    //private void PlaySfx(AudioSO _soValue)
-    //{
-    //    var _source = GetAvailableSource();
-    //    _source.clip = _soValue.Clip;
-    //    _source.loop = false;
-    //    _source.Play();
-    //}
 
     private void PlayAudio(AudioSO _soValue)
     {
