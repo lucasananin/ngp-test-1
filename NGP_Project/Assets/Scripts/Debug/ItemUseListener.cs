@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class ItemUseListener : MonoBehaviour
@@ -15,8 +14,9 @@ public class ItemUseListener : MonoBehaviour
         _so.RemoveListener(PrintMessage);
     }
 
-    private void PrintMessage(InventorySO arg0, Item arg1)
+    private void PrintMessage(Inventory _inventory, Item _itemValue)
     {
-        Debug.Log($"// {arg1.SO.DisplayName} used!");
+        _itemValue.DecreaseAmount(_inventory);
+        Debug.Log($"// {_itemValue.SO.DisplayName} used!");
     }
 }

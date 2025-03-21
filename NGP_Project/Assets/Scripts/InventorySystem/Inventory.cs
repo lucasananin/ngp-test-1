@@ -73,9 +73,11 @@ public class Inventory
         var _tempItem = _items[_indexA];
         _items[_indexA] = _items[_indexB];
         _items[_indexB] = _tempItem;
+    }
 
-        //var _temp = _a;
-        //_a = _b;
-        //_b = _temp;
+    public void RemoveItem(Item _itemValue)
+    {
+        _items.Remove(_itemValue);
+        OnChanged?.Invoke();
     }
 }

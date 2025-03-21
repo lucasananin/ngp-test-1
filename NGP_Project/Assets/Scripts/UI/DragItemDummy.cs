@@ -29,11 +29,11 @@ public class DragItemDummy : ItemUIDependant
         DropEmpty.OnDrop -= Disappear;
     }
 
-    private void Begin(ItemUISlot slot, Vector2 _initialPosition)
+    private void Begin(ItemUISlot _slotValue, Vector2 _initialPosition)
     {
-        ItemBeingDragged = slot;
+        ItemBeingDragged = _slotValue;
         _rect.position = _initialPosition;
-        _slot.Init(ItemBeingDragged.Item);
+        _slot.Init(_slotValue.InventorySO, ItemBeingDragged.Item);
     }
 
     private void Drag(DragItemSlot arg0, PointerEventData eventData)

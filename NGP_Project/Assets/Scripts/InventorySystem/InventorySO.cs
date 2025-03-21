@@ -7,6 +7,8 @@ public class InventorySO : ScriptableObject
 {
     [SerializeField] Inventory _inventory = null;
 
+    public Inventory Inventory { get => _inventory; private set => _inventory = value; }
+
     public bool TryAdd(ItemSO _soValue, int _quantityValue)
     {
         return _inventory.TryAdd(_soValue, _quantityValue);

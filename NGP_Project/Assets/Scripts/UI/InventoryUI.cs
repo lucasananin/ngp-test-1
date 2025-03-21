@@ -37,7 +37,7 @@ public class InventoryUI : MonoBehaviour
         for (int i = 0; i < _count; i++)
         {
             var _newSlot = Instantiate(_prefab, _content);
-            _newSlot.Init(_itemsList[i]);
+            _newSlot.Init(_inventory, _itemsList[i]);
             _slots.Add(_newSlot);
         }
     }
