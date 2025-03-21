@@ -5,6 +5,7 @@ public class InventoryLoader : MonoBehaviour
 {
     [SerializeField] InventorySO _inventory = null;
     [SerializeField] InventorySO _emptyInventory = null;
+    [SerializeField] ItemSOCollection _itemSoCollection = null;
     [SerializeField] List<ItemSO> _itemSoList = null;
 
     [ContextMenu("Load")]
@@ -23,7 +24,7 @@ public class InventoryLoader : MonoBehaviour
         for (int i = 0; i < _loadedInventory.itemDAOs.Count; i++)
         {
             var _daoList = _loadedInventory.itemDAOs[i];
-            var _so = GetItemSO(_daoList.so_id);
+            var _so = _itemSoCollection.GetItemSO(_daoList.so_id);
             _emptyInventory.TryAdd(_so, _daoList.amount);
         }
     }
@@ -40,18 +41,18 @@ public class InventoryLoader : MonoBehaviour
         PersistenceHandler.DeleteAllSaves();
     }
 
-    public ItemSO GetItemSO(string _name)
-    {
-        int _count = _itemSoList.Count;
+    //public ItemSO GetItemSO(string _name)
+    //{
+    //    int _count = _itemSoList.Count;
 
-        for (int i = 0; i < _count; i++)
-        {
-            if (_itemSoList[i].name == _name)
-            {
-                return _itemSoList[i];
-            }
-        }
+    //    for (int i = 0; i < _count; i++)
+    //    {
+    //        if (_itemSoList[i].name == _name)
+    //        {
+    //            return _itemSoList[i];
+    //        }
+    //    }
 
-        return null;
-    }
+    //    return null;
+    //}
 }
