@@ -24,10 +24,3 @@ public class Item
         }
     }
 }
-
-[System.Serializable]
-public class ItemDAO
-{
-    public string so_id = null;
-    public int amount = 0;
-}

@@ -3033,7 +3033,7 @@ GameObject:
   - component: {fileID: 2141438493}
   - component: {fileID: 2141438492}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: InventoryLoader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3601,8 +3601,8 @@ SceneRoots:
   - {fileID: 768334848}
   - {fileID: 701462809}
   - {fileID: 727049086}
+  - {fileID: 2141438493}
   - {fileID: 878553088}
   - {fileID: 1715463830}
   - {fileID: 1978489893}
   - {fileID: 516688582}
-  - {fileID: 2141438493}

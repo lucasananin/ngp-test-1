@@ -10,19 +10,21 @@ public class InventoryLoader : MonoBehaviour
     [ContextMenu("Load")]
     public void Load()
     {
-        //_inventory.Clear();
         var _loadedInventory = PersistenceHandler.Load<ItemListDAO>(Inventory.INVENTORY_KEY);
 
-        foreach (var item in _loadedInventory.itemDAOs)
-        {
-            Debug.Log($"{item.so_id} - {item.amount}");
-        }
+        //foreach (var item in _loadedInventory.itemDAOs)
+        //{
+        //    Debug.Log($"{item.so_id} - {item.amount}");
+        //}
 
         _emptyInventory.Clear();
-        foreach (var item in _loadedInventory.itemDAOs)
+        int _count = _loadedInventory.itemDAOs.Count;
+
+        for (int i = 0; i < _loadedInventory.itemDAOs.Count; i++)
         {
-            var _so = GetItemSO(item.so_id);
-            _emptyInventory.TryAdd(_so, item.amount);
+            var _daoList = _loadedInventory.itemDAOs[i];
+            var _so = GetItemSO(_daoList.so_id);
+            _emptyInventory.TryAdd(_so, _daoList.amount);
         }
     }
 
@@ -30,6 +32,12 @@ public class InventoryLoader : MonoBehaviour
     public void Save()
     {
         _inventory.Save();
+    }
+
+    [ContextMenu("DeleteAllSaves()")]
+    public void DeleteFiles()
+    {
+        PersistenceHandler.DeleteAllSaves();
     }
 
     public ItemSO GetItemSO(string _name)

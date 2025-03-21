@@ -86,16 +86,6 @@ public class Inventory
 
     public void Save()
     {
-        //int _count = _items.Count;
-        //var _daoList = new List<ItemDAO>();
-
-        //for (int i = 0; i < _count; i++)
-        //{
-        //    var _item = _items[i];
-        //    var _newDao = new ItemDAO { so_id = _item.SO.name, amount = _item.Amount };
-        //    _daoList.Add(_newDao);
-        //}
-
         int _count = _items.Count;
         var _daoList = new ItemListDAO();
 
@@ -107,17 +97,10 @@ public class Inventory
         }
 
         PersistenceHandler.Save(_daoList, INVENTORY_KEY);
-        //PersistenceHandler.Save(_daoList, INVENTORY_KEY);
     }
 
     internal void Clear()
     {
         _items.Clear();
     }
-}
-
-[System.Serializable]
-public class ItemListDAO
-{
-    public List<ItemDAO> itemDAOs = new List<ItemDAO>();
 }
