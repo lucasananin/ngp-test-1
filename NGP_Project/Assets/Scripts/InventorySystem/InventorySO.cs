@@ -33,4 +33,14 @@ public class InventorySO : ScriptableObject
     {
         _inventory.SwapItems(_a, _b);
     }
+
+    public void Clear()
+    {
+        _inventory.Clear();
+    }
+
+    public void Save()
+    {
+        _inventory.Save();
+    }
 }

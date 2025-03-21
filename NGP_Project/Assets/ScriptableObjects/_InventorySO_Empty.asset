@@ -10,13 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7c62c11f4a5395848bce70537814f336, type: 3}
-  m_Name: InventorySO
+  m_Name: _InventorySO_Empty
   m_EditorClassIdentifier: 
   _inventory:
-    _items:
-    - _so: {fileID: 11400000, guid: 75ff40b8e73c88a4fa9bc59f42532ad9, type: 2}
-      _amount: 3
-    - _so: {fileID: 11400000, guid: 462248663d7ca2148baf13c3540cba1f, type: 2}
-      _amount: 1
-    - _so: {fileID: 11400000, guid: abe503e92c52a0f45bb70f9e02372b5a, type: 2}
-      _amount: 2
+    _items: []

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -9,6 +10,8 @@ public class Inventory
     [SerializeField] List<Item> _items = null;
 
     public event UnityAction OnChanged = null;
+
+    public const string INVENTORY_KEY= "Inventory";
 
     public List<Item> Items { get => _items; private set => _items = value; }
 
@@ -80,4 +83,41 @@ public class Inventory
         _items.Remove(_itemValue);
         OnChanged?.Invoke();
     }
+
+    public void Save()
+    {
+        //int _count = _items.Count;
+        //var _daoList = new List<ItemDAO>();
+
+        //for (int i = 0; i < _count; i++)
+        //{
+        //    var _item = _items[i];
+        //    var _newDao = new ItemDAO { so_id = _item.SO.name, amount = _item.Amount };
+        //    _daoList.Add(_newDao);
+        //}
+
+        int _count = _items.Count;
+        var _daoList = new ItemListDAO();
+
+        for (int i = 0; i < _count; i++)
+        {
+            var _item = _items[i];
+            var _newDao = new ItemDAO { so_id = _item.SO.name, amount = _item.Amount };
+            _daoList.itemDAOs.Add(_newDao);
+        }
+
+        PersistenceHandler.Save(_daoList, INVENTORY_KEY);
+        //PersistenceHandler.Save(_daoList, INVENTORY_KEY);
+    }
+
+    internal void Clear()
+    {
+        _items.Clear();
+    }
+}
+
+[System.Serializable]
+public class ItemListDAO
+{
+    public List<ItemDAO> itemDAOs = new List<ItemDAO>();
 }
