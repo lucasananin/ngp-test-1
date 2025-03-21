@@ -1,36 +1,43 @@
-using System.Collections.Generic;
 using UnityEngine;
 
-public class InventoryLoader : MonoBehaviour
+public class InventoryLoader : AbstractDAOLoader
 {
     [SerializeField] InventorySO _inventory = null;
-    [SerializeField] InventorySO _emptyInventory = null;
     [SerializeField] ItemSOCollection _itemSoCollection = null;
-    [SerializeField] List<ItemSO> _itemSoList = null;
 
-    [ContextMenu("Load")]
-    public void Load()
+    private void Start()
+    {
+        Load();
+    }
+
+    [ContextMenu("Load()")]
+    public override void Load()
     {
         var _loadedInventory = PersistenceHandler.Load<ItemListDAO>(Inventory.INVENTORY_KEY);
+
+        if (_loadedInventory == null || _loadedInventory.itemDAOs.Count <= 0)
+        {
+            return;
+        }
 
         //foreach (var item in _loadedInventory.itemDAOs)
         //{
         //    Debug.Log($"{item.so_id} - {item.amount}");
         //}
 
-        _emptyInventory.Clear();
+        _inventory.Clear();
         int _count = _loadedInventory.itemDAOs.Count;
 
         for (int i = 0; i < _loadedInventory.itemDAOs.Count; i++)
         {
             var _daoList = _loadedInventory.itemDAOs[i];
             var _so = _itemSoCollection.GetItemSO(_daoList.so_id);
-            _emptyInventory.TryAdd(_so, _daoList.amount);
+            _inventory.TryAdd(_so, _daoList.amount);
         }
     }
 
-    [ContextMenu("Save")]
-    public void Save()
+    [ContextMenu("Save()")]
+    public override void Save()
     {
         _inventory.Save();
     }
@@ -40,19 +47,4 @@ public class InventoryLoader : MonoBehaviour
     {
         PersistenceHandler.DeleteAllSaves();
     }
-
-    //public ItemSO GetItemSO(string _name)
-    //{
-    //    int _count = _itemSoList.Count;
-
-    //    for (int i = 0; i < _count; i++)
-    //    {
-    //        if (_itemSoList[i].name == _name)
-    //        {
-    //            return _itemSoList[i];
-    //        }
-    //    }
-
-    //    return null;
-    //}
 }
