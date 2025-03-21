@@ -16,3 +16,4 @@ MonoBehaviour:
   _displayName: ItemSO_Pendrive
   _maxAmount: 2
   _useSO: {fileID: 11400000, guid: 32974842f5f639f4589102b04f336636, type: 2}
+  _description: Need to transfer the family photos to the new PC.

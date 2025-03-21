@@ -16,3 +16,4 @@ MonoBehaviour:
   _displayName: ItemSO_Capsule
   _maxAmount: 6
   _useSO: {fileID: 11400000, guid: de13d481365a1e74ca5945f4655f4213, type: 2}
+  _description: Need to take it every 8 hours.

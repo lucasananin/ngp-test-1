@@ -828,7 +828,7 @@ GameObject:
   - component: {fileID: 756117159}
   - component: {fileID: 756117158}
   m_Layer: 5
-  m_Name: Panel_Info
+  m_Name: Panel_Description
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -870,6 +870,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _canvasGroup: {fileID: 756117159}
   _fadeDuration: 0.3
+  _titleText: {fileID: 902267744}
+  _descriptionText: {fileID: 1262326941}
 --- !u!225 &756117159
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -1424,7 +1426,7 @@ GameObject:
   - component: {fileID: 1262326942}
   - component: {fileID: 1262326941}
   m_Layer: 5
-  m_Name: Text_Info
+  m_Name: Text_Description
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

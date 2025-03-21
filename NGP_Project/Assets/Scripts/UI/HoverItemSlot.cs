@@ -9,13 +9,11 @@ public class HoverItemSlot : ItemUIDependant, IPointerEnterHandler, IPointerExit
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        Debug.Log($"enter");
         OnEnter?.Invoke(_slot);
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        Debug.Log($"exit");
         OnExit?.Invoke(_slot);
     }
 }

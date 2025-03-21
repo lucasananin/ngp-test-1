@@ -16,3 +16,4 @@ MonoBehaviour:
   _displayName: ItemSO_Gamepad
   _maxAmount: 1
   _useSO: {fileID: 11400000, guid: 32974842f5f639f4589102b04f336636, type: 2}
+  _description: Maybe i play a bit after everything is set.
