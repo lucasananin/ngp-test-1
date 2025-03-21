@@ -20,7 +20,7 @@ public class FurnitureBehaviour : MonoBehaviour
         if (_other.TryGetComponent(out FurnitureAgent _agent))
         {
             _areaRenderer.color = Color.green;
-            _agent.SetItem(_requiredItem);
+            _agent.SetItem(this, _requiredItem);
         }
     }
 
@@ -29,7 +29,7 @@ public class FurnitureBehaviour : MonoBehaviour
         if (_other.TryGetComponent(out FurnitureAgent _agent))
         {
             _areaRenderer.color = Color.red;
-            _agent.SetItem(null);
+            _agent.SetItem(null, null);
         }
     }
 

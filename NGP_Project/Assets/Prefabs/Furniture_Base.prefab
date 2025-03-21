@@ -226,7 +226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83cb37839d99676499366f7e88a4b006, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _requiredItem: {fileID: 11400000, guid: 75ff40b8e73c88a4fa9bc59f42532ad9, type: 2}
+  _requiredItem: {fileID: 11400000, guid: 462248663d7ca2148baf13c3540cba1f, type: 2}
   _trigger: {fileID: 1190671222091578328}
   _areaRenderer: {fileID: 5981593314167387197}
   _iconRenderer: {fileID: 7604777589624098489}

@@ -17,8 +17,6 @@ public class ItemUIAmount : ItemUIDependant
 
     private void UpdateVisuals(Item _itemValue)
     {
-        if (_itemValue.Amount <= 1) return;
-
-        _text.text = $"{_itemValue.Amount}";
+        _text.text = _itemValue.Amount > 1 ? $"{_itemValue.Amount}" : string.Empty;
     }
 }

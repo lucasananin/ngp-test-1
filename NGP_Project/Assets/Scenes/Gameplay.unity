@@ -3393,6 +3393,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _useSO: {fileID: 11400000, guid: 34740e745a9788b409486ae1c9fc4bbb, type: 2}
+  _furniture: {fileID: 0}
   _itemSO: {fileID: 0}
 --- !u!1 &2141438491
 GameObject:
