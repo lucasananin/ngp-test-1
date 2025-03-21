@@ -1,11 +1,10 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class DragItemDummy : MonoBehaviour
+public class DragItemDummy : ItemUIDependant
 {
     [SerializeField] Canvas _canvas = null;
     [SerializeField] RectTransform _rect = null;
-    [SerializeField] ItemUISlot _myUiSlot = null;
 
     public static ItemUISlot ItemBeingDragged = null;
 
@@ -34,7 +33,7 @@ public class DragItemDummy : MonoBehaviour
     {
         ItemBeingDragged = slot;
         _rect.position = _initialPosition;
-        _myUiSlot.Init(ItemBeingDragged.Item);
+        _slot.Init(ItemBeingDragged.Item);
     }
 
     private void Drag(DragItemSlot arg0, PointerEventData eventData)

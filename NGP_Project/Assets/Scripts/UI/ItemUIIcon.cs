@@ -1,9 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ItemUIIcon : MonoBehaviour
+public class ItemUIIcon : ItemUIDependant
 {
-    [SerializeField] ItemUISlot _slot = null;
     [SerializeField] Image _image = null;
 
     private void OnEnable()

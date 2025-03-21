@@ -2,10 +2,9 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-public class DragItemSlot : MonoBehaviour, IBeginDragHandler, IDragHandler
+public class DragItemSlot : ItemUIDependant, IBeginDragHandler, IDragHandler
 {
     [SerializeField] RectTransform _rect = null;
-    [SerializeField] ItemUISlot _itemSlot = null;
 
     public static event UnityAction<ItemUISlot, Vector2> OnBeginDrag_Action = null;
     public static event UnityAction<DragItemSlot, PointerEventData> OnDrag_Action = null;
@@ -17,7 +16,7 @@ public class DragItemSlot : MonoBehaviour, IBeginDragHandler, IDragHandler
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        OnBeginDrag_Action?.Invoke(_itemSlot, _rect.position);
+        OnBeginDrag_Action?.Invoke(_slot, _rect.position);
     }
 
     public void OnDrag(PointerEventData eventData)

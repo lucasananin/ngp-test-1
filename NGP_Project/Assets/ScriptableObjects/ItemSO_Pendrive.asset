@@ -15,3 +15,4 @@ MonoBehaviour:
   _icon: {fileID: 21300000, guid: cefe440a23eae994b957e21af3b22079, type: 3}
   _displayName: ItemSO_Pendrive
   _maxAmount: 2
+  _useSO: {fileID: 11400000, guid: 32974842f5f639f4589102b04f336636, type: 2}

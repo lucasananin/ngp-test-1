@@ -14,4 +14,9 @@ public class ItemUISlot : MonoBehaviour
         _item = _value;
         OnValueChanged?.Invoke(_item);
     }
+
+    public void Use()
+    {
+        _item.SO.UseSO.Send(null, _item);
+    }
 }

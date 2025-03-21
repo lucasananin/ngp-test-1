@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ItemUIButton : MonoBehaviour
+public class ItemUIButton : ItemUIDependant
 {
     [SerializeField] Button _button = null;
 
@@ -17,6 +17,6 @@ public class ItemUIButton : MonoBehaviour
 
     private void Use()
     {
-        Debug.Log($"{name}", this);
+        _slot.Use();
     }
 }
