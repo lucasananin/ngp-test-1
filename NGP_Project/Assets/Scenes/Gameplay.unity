@@ -449,7 +449,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _prefab: {fileID: 6620874846026786380, guid: f9dce7d2584fd6541a2d734934bc6c24, type: 3}
   _area: {fileID: 550433280}
-  _spawnRate: 1
+  _spawnRate: 15
   _spawnList:
   - itemSO: {fileID: 11400000, guid: 75ff40b8e73c88a4fa9bc59f42532ad9, type: 2}
     amount: 1

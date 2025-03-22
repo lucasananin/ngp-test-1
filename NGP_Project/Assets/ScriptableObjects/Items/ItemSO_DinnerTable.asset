@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ItemSO_DinnerTable
   m_EditorClassIdentifier: 
   _icon: {fileID: 21300000, guid: 2cdc24be3b7a30a42a8dafdb2138a344, type: 3}
-  _displayName: ItemSO_DinnerTable
+  _displayName: Dinner Table
   _maxAmount: 1
   _useSO: {fileID: 11400000, guid: 34740e745a9788b409486ae1c9fc4bbb, type: 2}
-  _description: Need to transfer the family photos to the new PC.
+  _description: I dont like the design for this table.

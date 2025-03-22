@@ -15,8 +15,8 @@ public class ItemSO : ScriptableObject
     public ItemUseSO UseSO { get => _useSO; private set => _useSO = value; }
     public string Description { get => _description; private set => _description = value; }
 
-    private void OnValidate()
-    {
-        _displayName = name;
-    }
+    //private void OnValidate()
+    //{
+    //    _displayName = name;
+    //}
 }

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ItemSO_TV
   m_EditorClassIdentifier: 
   _icon: {fileID: 21300000, guid: f4104d8a572b40147b5eca3268c43079, type: 3}
-  _displayName: ItemSO_TV
+  _displayName: TV
   _maxAmount: 1
   _useSO: {fileID: 11400000, guid: 34740e745a9788b409486ae1c9fc4bbb, type: 2}
-  _description: Need to transfer the family photos to the new PC.
+  _description: My new 16K TV.

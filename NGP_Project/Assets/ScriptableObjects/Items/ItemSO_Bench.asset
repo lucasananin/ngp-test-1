@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ItemSO_Bench
   m_EditorClassIdentifier: 
   _icon: {fileID: 21300000, guid: 71f20b1707a86d94ba0fef8da2ecc9f1, type: 3}
-  _displayName: ItemSO_Bench
+  _displayName: Bench
   _maxAmount: 1
   _useSO: {fileID: 11400000, guid: 34740e745a9788b409486ae1c9fc4bbb, type: 2}
-  _description: My main work tool.
+  _description: A simple but useful bench.

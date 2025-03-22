@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ItemSO_Hat_4
   m_EditorClassIdentifier: 
   _icon: {fileID: 21300000, guid: a4e697064f024734bbfca15bd8b7e05d, type: 3}
-  _displayName: ItemSO_Hat_4
+  _displayName: Horned Cap
   _maxAmount: 1
   _useSO: {fileID: 11400000, guid: 32974842f5f639f4589102b04f336636, type: 2}
-  _description: Need to transfer the family photos to the new PC.
+  _description: Skol.

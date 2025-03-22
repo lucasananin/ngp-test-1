@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ItemSO_Hat_1
   m_EditorClassIdentifier: 
   _icon: {fileID: 21300000, guid: 1845e9ae46a029248bef284cf12730f5, type: 3}
-  _displayName: ItemSO_Hat_1
+  _displayName: Baseball Cap
   _maxAmount: 1
   _useSO: {fileID: 11400000, guid: 32974842f5f639f4589102b04f336636, type: 2}
-  _description: Need to transfer the family photos to the new PC.
+  _description: Baseball cap.
