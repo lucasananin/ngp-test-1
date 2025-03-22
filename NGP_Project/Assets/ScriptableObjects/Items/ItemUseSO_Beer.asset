@@ -10,5 +10,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2f1a8487c398b1f4d80040f997a63b99, type: 3}
-  m_Name: ItemUseSO_Consumable
+  m_Name: ItemUseSO_Beer
   m_EditorClassIdentifier: 

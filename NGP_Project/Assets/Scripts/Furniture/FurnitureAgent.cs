@@ -22,7 +22,7 @@ public class FurnitureAgent : ItemUseListener
         {
             _furniture.SetValue(true);
             _inventory.RemoveItem(_itemValue);
-            FindFirstObjectByType<InventoryUI>().gameObject.SetActive(false);
+            FindFirstObjectByType<InventoryUI>().InstantHide();
             Debug.Log($"Correct Item");
         }
         else

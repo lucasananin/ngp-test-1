@@ -11,7 +11,6 @@ public class StartupSceneLoader
 
     private static void LoadStartupScene(PlayModeStateChange _state)
     {
-        return;
         if (_state == PlayModeStateChange.ExitingEditMode)
         {
             EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo();
