@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d518180a961b5144a5c148621b967b7, type: 3}
   m_Name: AudioSO_Music_Game
   m_EditorClassIdentifier: 
-  _clip: {fileID: 0}
+  _clip: {fileID: 8300000, guid: 84b492831ba2139448a25e69c92d0271, type: 3}
   _isMusic: 1
