@@ -17,7 +17,7 @@ public class InventoryUI : CanvasView
 
     protected override void Update()
     {
-        if (Input.GetKeyDown(KeyCode.I))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             if (IsVisible())
             {
