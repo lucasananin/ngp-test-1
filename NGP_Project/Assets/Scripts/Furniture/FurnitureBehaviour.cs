@@ -6,6 +6,8 @@ public class FurnitureBehaviour : MonoBehaviour
     [SerializeField] Collider2D _trigger = null;
     [SerializeField] SpriteRenderer _areaRenderer = null;
     [SerializeField] SpriteRenderer _iconRenderer = null;
+    [SerializeField] Color _defaultColor = Color.red;
+    [SerializeField] Color _enterColor = Color.green;
 
     [Header("// Readonly")]
     [SerializeField] bool _isSet = false;
@@ -21,7 +23,7 @@ public class FurnitureBehaviour : MonoBehaviour
     {
         if (_other.TryGetComponent(out FurnitureAgent _agent))
         {
-            _areaRenderer.color = Color.green;
+            _areaRenderer.color = _enterColor;
             _agent.SetItem(this, _requiredItem);
         }
     }
@@ -30,7 +32,7 @@ public class FurnitureBehaviour : MonoBehaviour
     {
         if (_other.TryGetComponent(out FurnitureAgent _agent))
         {
-            _areaRenderer.color = Color.red;
+            _areaRenderer.color = _defaultColor;
             _agent.SetItem(null, null);
         }
     }
@@ -45,7 +47,7 @@ public class FurnitureBehaviour : MonoBehaviour
     {
         _trigger.enabled = !_isSet;
         _areaRenderer.enabled = !_isSet;
-        _areaRenderer.color = Color.red;
+        _areaRenderer.color = _defaultColor;
         _iconRenderer.enabled = _isSet;
         _iconRenderer.sprite = _requiredItem.Icon;
     }
