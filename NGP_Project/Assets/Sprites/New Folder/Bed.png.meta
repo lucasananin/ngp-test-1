@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 4764cd023e0d6df4da93d8e50ff161cc
+guid: 6f14318162cf7524dae148e5874eda49
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6749319466708630150
-    second: Prota_0_0
+      213: 5167690650097798016
+    second: Bed_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Prota_0_0
+      name: Bed_0
       rect:
         serializedVersion: 2
-        x: 268
-        y: 179
-        width: 516
-        height: 516
+        x: 252
+        y: 87
+        width: 520
+        height: 853
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 68afbc8ab466aad50800000000000000
-      internalID: 6749319466708630150
+      spriteID: 08bcf24444357b740800000000000000
+      internalID: 5167690650097798016
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Prota_0_0: 6749319466708630150
+      Bed_0: 5167690650097798016
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

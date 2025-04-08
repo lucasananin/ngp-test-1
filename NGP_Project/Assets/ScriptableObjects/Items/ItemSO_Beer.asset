@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39c080c4b9a83a942b2f791a566b15d4, type: 3}
   m_Name: ItemSO_Beer
   m_EditorClassIdentifier: 
-  _icon: {fileID: 21300000, guid: f9e616c344e323848a3c606e76c310b2, type: 3}
+  _icon: {fileID: 21300000, guid: dd577e8c78e3ade418ad2306731e839e, type: 3}
   _displayName: Beer
   _maxAmount: 3
   _useSO: {fileID: 11400000, guid: de13d481365a1e74ca5945f4655f4213, type: 2}

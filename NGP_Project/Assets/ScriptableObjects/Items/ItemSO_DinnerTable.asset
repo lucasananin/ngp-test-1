@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39c080c4b9a83a942b2f791a566b15d4, type: 3}
   m_Name: ItemSO_DinnerTable
   m_EditorClassIdentifier: 
-  _icon: {fileID: 21300000, guid: 2cdc24be3b7a30a42a8dafdb2138a344, type: 3}
+  _icon: {fileID: 21300000, guid: 69a718847798f14449fb15fdbcd986fd, type: 3}
   _displayName: Dinner Table
   _maxAmount: 1
   _useSO: {fileID: 11400000, guid: 34740e745a9788b409486ae1c9fc4bbb, type: 2}
